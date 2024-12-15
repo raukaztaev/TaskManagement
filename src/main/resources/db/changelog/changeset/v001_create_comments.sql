@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    comment_author_id INT NOT NULL,
+    task_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(comment_author_id) REFERENCES users (id),
+    FOREIGN KEY(task_id) REFERENCES tasks (id)
+);

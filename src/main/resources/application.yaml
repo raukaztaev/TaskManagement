@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: TaskManagement
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/general
+    username: root
+
+  liquibase:
+    user: root
+    change-log: db/changelog/db.changelog-master.yaml
+
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+token:
+  signing:
+    key: ${JWT_TOKEN}
